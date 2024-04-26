@@ -12,7 +12,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: openWeatherMapUrl,
-        changeOrigin: true,
+        changeOrigin: true,   
         rewrite: (path) => {
           const urlObj = new URL(
             path,
