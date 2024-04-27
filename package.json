@@ -13,6 +13,7 @@
     "test": "dotenv -e .env.test -- vitest --run --coverage"
   },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "dotenv-cli": "^7.4.1",
     "husky": "^9.0.11",
     "react": "^18.2.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/node": "^20.12.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
