@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/api/:match*",
-        "destination": "https://api.openweathermap.org/:match*appId=${API_KEY}"
+        "source": "/api/:path*",
+        "destination": "https://api.openweathermap.org/:path*&appId=${VITE_OPEN_WEATHER_MAP_API_KEY}"
       }
     ]
 }
