@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import OpenWeatherIcon from "../../../../components/icons/OpenWeatherIcon";
+import OpenWeatherIcon from "../../../../components/OpenWeatherIcon";
 import { IForecastItem } from "../../../../hooks/useForeCast";
 
 type Prop = {
@@ -10,7 +10,7 @@ export default function ForecastItem({ item }: Prop) {
     return (
       <div className="flex items-center justify-between gap-6">
         <span className="font-medium text-black">
-          {dayjs(item.dt).format('HH:MM')}
+          {dayjs.unix((item.dt)).format('hh:mm A')}
         </span>
         <div className="flex grow items-center">
           <OpenWeatherIcon

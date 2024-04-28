@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { getData } from '../services/api';
+import { getData } from '../services/fetcher';
 
 interface CurrentWeatherResponse {
     coord: {

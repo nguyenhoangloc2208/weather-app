@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import dayjs from "dayjs";
-import { getData } from "../services/api";
+import { getData } from "../services/fetcher";
 
 interface ForeCastResponse {
     cod: string;

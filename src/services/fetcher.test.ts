@@ -1,4 +1,4 @@
-import { getData } from './api';
+import { getData } from './fetcher';
 
 describe('getData', () => {
   it('should fetch data successfully', async () => {
