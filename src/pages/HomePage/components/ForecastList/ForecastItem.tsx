@@ -20,7 +20,7 @@ export default function ForecastItem({ item }: Prop) {
             className="shrink-0"
           />
           <span className="text-sm">
-            {item.main.temp_min}/{item.main.temp_max}&#176;C
+            {Math.floor(item.main.temp_min)}/{Math.ceil(item.main.temp_max)}&#176;C
           </span>
         </div>
         <span className="font-medium text-black">

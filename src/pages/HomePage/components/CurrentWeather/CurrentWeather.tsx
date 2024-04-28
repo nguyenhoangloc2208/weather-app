@@ -33,7 +33,7 @@ export default function CurrentWeather() {
     return (
         <Paper>
             <span className="font-light text-black">
-                {dayjs().format('MMMM DD, YYYY')}
+                {dayjs().format('MMMM DD, YYYY  hh:mm A')}
             </span>
             <div className="flex flex-wrap items-center justify-around">
                 <OpenWeatherIcon
@@ -43,7 +43,7 @@ export default function CurrentWeather() {
                 className="shrink-0"
                 />
                 <div className="flex shrink-0 flex-col items-center">
-                <span className="text-5xl text-black">{data.main.temp}&#176;C</span>
+                <span className="text-5xl text-black">{data.main.temp.toFixed()}&#176;C</span>
                 <span className="text-black">
                     {capitalizeWords(data.weather[0].description)}
                 </span>
