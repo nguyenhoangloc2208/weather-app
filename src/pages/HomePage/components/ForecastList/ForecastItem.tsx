@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import OpenWeatherIcon from "../../../../components/OpenWeatherIcon";
 import { IForecastItem } from "../../../../hooks/useForeCast";
+import { capitalizeWords } from "../../../../utils/string";
 
 type Prop = {
   item: IForecastItem;
@@ -24,7 +25,7 @@ export default function ForecastItem({ item }: Prop) {
           </span>
         </div>
         <span className="font-medium text-black">
-          {item.weather[0].description}
+          {capitalizeWords(item.weather[0].description)}
         </span>
       </div>
     );

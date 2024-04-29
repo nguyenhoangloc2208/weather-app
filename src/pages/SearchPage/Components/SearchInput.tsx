@@ -45,13 +45,13 @@ export default function SearchInput() {
     )
 
     return (
-        <div className="mx-auto flex h-full flex-col items-center">
+        <div className="mx-auto flex w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 h-full flex-col items-center">
             <Combobox
               value={inputValue}
               onChange={onSelectValue}
             >
                 <Combobox.Input
-                className="input h-auto w-full bg-white p-1"
+                className="input h-auto w-full bg-white p-2"
                 placeholder="Search country, or city here..."
                 onChange={debounce((event) => onInputChange(event.target.value), 500)}
                 />
