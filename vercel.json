@@ -1,5 +1,5 @@
 { "framework": "vite",
-  "public": "true",
+  "public": true,
   "installCommand": "npm install -f",
   "env": {
     "VITE_OPEN_WEATHER_MAP_API_KEY": "43b9beb559692221c54766ae004e675e"
