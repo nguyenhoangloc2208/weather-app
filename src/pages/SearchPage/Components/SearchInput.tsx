@@ -45,7 +45,7 @@ export default function SearchInput() {
     )
 
     return (
-        <div className="mx-auto flex h-full w-1/3 flex-col items-center">
+        <div className="mx-auto flex h-full flex-col items-center">
             <Combobox
               value={inputValue}
               onChange={onSelectValue}
