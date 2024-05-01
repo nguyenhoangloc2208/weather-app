@@ -1,3 +1,5 @@
+// icon:icon-trash | Heroicons UI https://github.com/sschoger/heroicons-ui | Steve Schoger
+
 export default function IconTrash(props: React.SVGProps<SVGSVGElement>) {
     return(
         <svg 
