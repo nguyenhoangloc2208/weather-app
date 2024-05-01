@@ -21,7 +21,7 @@ export default function RootPage() {
     return (
         <div className="min-h-screen" style={{backgroundImage: `url(${images.Background})`}}>
             <nav className='pt-3'>
-                <label className='input input-bordered mx-auto flex justify-between w-1/3 min-w-[300px] items-center gap-2 border-none bg-white px-3'>
+                <label className='input input-bordered mx-auto flex justify-between w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 min-w-[300px] items-center gap-2 border-none bg-white px-3'>
                     <IconLocation
                         className='cursor-pointer fill-black'
                         onClick={onLocationClick}

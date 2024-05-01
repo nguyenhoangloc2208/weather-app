@@ -12,6 +12,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
+    "@typescript-eslint/no-explicit-any": "off",
     'react/destructuring-assignment': [
       'error',
       'always',

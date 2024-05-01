@@ -9,7 +9,7 @@ type Prop = {
 
 export default function ForecastItem({ item }: Prop) {
     return (
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex items-center justify-between gap-6 lg:text-base text-sm">
         <span className="font-medium text-black">
           {dayjs.unix((item.dt)).format('hh:mm A')}
         </span>
