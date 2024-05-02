@@ -7,12 +7,11 @@ import { selectedGeoAtom } from '../../../../atoms/selectedGeoAtom';
 import { useNavigate } from 'react-router-dom';
 import { geoHistoryAtom } from '../../../../atoms/geoHistoryAtom';
 
-
 export default function SearchInput() {
     const [error, setError] = useState<string | null>(null);
     const [inputValue, setInputValue] = useState('');
     const [options, setOptions] = useState<GeoCodingResponse[]>([]);
-    const { trigger } = useGeoCoding();
+    const { trigger, isMutating } = useGeoCoding();
     const setSelectedGetAtom = useSetAtom(selectedGeoAtom);
     const setGeoHistory = useSetAtom(geoHistoryAtom);
     const navigate = useNavigate();
@@ -76,11 +75,13 @@ export default function SearchInput() {
                 <Combobox.Input
                 className="input h-auto w-full bg-white p-2"
                 placeholder="Search country, or city here..."
+                autoComplete='off'
                 onChange={debounce((event) => onInputChange(event.target.value), 500)}
                 onFocus={onInputFocus}
                 />
-                {error && <span className="text-red-500">{error}</span>}
-                {options.length > 0 && (
+                {isMutating && !error && (<span className='loading loading-spinner loading-sm mt-3 mx-auto block'></span>)}
+                {!isMutating && error && (<span className="text-red-500">{error}</span>)}
+                {!isMutating && !error && options.length > 0 && (
                 <Combobox.Options className="mt-1 w-full rounded-md bg-white p-1">
                     {options.map((opt) => (
                     <Combobox.Option

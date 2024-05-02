@@ -4,7 +4,6 @@ import IconSearch from '../components/icons/IconSearch';
 import { useCallback } from 'react';
 import { useAtomValue } from 'jotai';
 import { selectedGeoAtom } from '../atoms/selectedGeoAtom';
-import images from '../assets/images/image';
 import { IconHome } from '../components/icons/IconHome';
 
 export default function RootPage() {
@@ -21,7 +20,7 @@ export default function RootPage() {
     }, [navigate]);
 
     return (
-        <div className="min-h-screen" style={{backgroundImage: `url(${images.Background})`}}>
+        <div className="min-h-screen bg-sky">
             <nav className='pt-3'>
                 <label className='input input-bordered mx-auto flex justify-between w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 min-w-[300px] items-center gap-2 border-none bg-white px-3'>
                     {location.pathname === '/' ? 

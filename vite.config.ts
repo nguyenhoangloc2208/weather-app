@@ -20,7 +20,7 @@ export default defineConfig({
           );
 
           urlObj.searchParams.set(
-            'appId',
+            'appid',
             process.env.VITE_OPEN_WEATHER_MAP_API_KEY as string,
           );
           urlObj.searchParams.set('lang', 'en');

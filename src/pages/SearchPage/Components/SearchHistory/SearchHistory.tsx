@@ -40,7 +40,10 @@ export default function SearchHistory() {
                 )} */}
                 {history.length > 0 && history.map((item, index) => {
                     return (
-                        <div key={index} className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100">
+                        <div 
+                            key={index} 
+                            role="listitem"
+                            className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100">
                             <span>{item.name}</span>
                             <div className="flex gap-3">
                                 <IconSearch

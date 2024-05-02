@@ -1,3 +1,5 @@
+import { trackError } from "../utils/error";
+
 export async function getData<Data, Key extends string>(
     url: Key,
 ): Promise<Data> {
@@ -12,6 +14,7 @@ export async function getData<Data, Key extends string>(
       return await response.json();
     } catch (error) {
       console.error('Error fetching data:', error);
+      trackError(error as Error);
       throw error;
     }
 }
@@ -26,7 +29,7 @@ export async function getDataWithArgs<
     for (const [key, value] of Object.entries(arg)) {
       queryString += `&${key}=${value}`;
     }
-    const response = await fetch(`${url}?${queryString}`, {
+    const response = await fetch(`${url}?${queryString.replace('&', '')}`, {
       method: 'GET',
     });
 
@@ -37,6 +40,7 @@ export async function getDataWithArgs<
     return await response.json();
   } catch(error) {
     console.error('Error fetching data:', error);
+    trackError(error as Error);
     throw error;
   }
 }

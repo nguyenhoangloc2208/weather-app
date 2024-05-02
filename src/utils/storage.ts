@@ -1,6 +1,7 @@
 import CryptoJS from "crypto-js";
 import { SyncStorage } from "jotai/vanilla/utils/atomWithStorage";
 import { storageKey } from "./env";
+import { trackError } from "./error";
 
 export const storage: SyncStorage<any> = {
     getItem: (key, initialValue) => {
@@ -13,6 +14,7 @@ export const storage: SyncStorage<any> = {
             }
             return initialValue;
         } catch (error) {
+            trackError(error as Error);
             return initialValue;
         }
     },
