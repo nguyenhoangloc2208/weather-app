@@ -73,7 +73,7 @@ export default function SearchInput() {
               onChange={onSelectValue}
             >
                 <Combobox.Input
-                className="input h-auto w-full bg-white p-2"
+                className="input h-auto w-full bg-white dark:bg-dblack dark:text-dlight p-2"
                 placeholder="Search country, or city here..."
                 autoComplete='off'
                 onChange={debounce((event) => onInputChange(event.target.value), 500)}
@@ -82,12 +82,12 @@ export default function SearchInput() {
                 {isMutating && !error && (<span className='loading loading-spinner loading-sm mt-3 mx-auto block'></span>)}
                 {!isMutating && error && (<span className="text-red-500">{error}</span>)}
                 {!isMutating && !error && options.length > 0 && (
-                <Combobox.Options className="mt-1 w-full rounded-md bg-white p-1">
+                <Combobox.Options className="mt-1 w-full rounded-md bg-white dark:bg-black p-1">
                     {options.map((opt) => (
                     <Combobox.Option
                         key={opt.lat + ',' + opt.lon}
                         value={JSON.stringify(opt)}
-                        className="ui-active:bg-blue-200 rounded-sm p-1 text-black"
+                        className="ui-active:bg-blue-200 dark:ui-active:bg-dhoverblack dark:bg-black rounded-sm p-1 text-black dark:text-dlight"
                     >
                         {opt.name}
                     </Combobox.Option>

@@ -16,7 +16,7 @@ export default function ForecastList() {
 
   return (
     <div className="mt-5 flex w-full flex-col">
-      <span className='font-medium text-black'>5-day Forecast (3 Hours)</span>
+      <span className='font-medium text-black dark:text-dlight'>5-day Forecast (3 Hours)</span>
       <Paper className="mt-3 h-[450px] overflow-auto p-0">
         {isLoading && (
           <span className='loading loading-spinner loading-lg mx-auto block'></span>

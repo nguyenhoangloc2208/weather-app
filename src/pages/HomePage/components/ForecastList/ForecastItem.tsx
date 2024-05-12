@@ -10,7 +10,7 @@ type Prop = {
 export default function ForecastItem({ item }: Prop) {
     return (
       <div className="flex items-center justify-between gap-6 lg:text-base text-sm">
-        <span className="font-medium text-black">
+        <span className="font-medium text-black dark:text-dlight">
           {dayjs.unix((item.dt)).format('hh:mm A')}
         </span>
         <div className="flex grow items-center">
@@ -20,11 +20,11 @@ export default function ForecastItem({ item }: Prop) {
             height={50}
             className="shrink-0"
           />
-          <span className="text-sm">
+          <span className="text-sm dark:text-dlight">
             {Math.floor(item.main.temp_min)}/{Math.ceil(item.main.temp_max)}&#176;C
           </span>
         </div>
-        <span className="font-medium text-black">
+        <span className="font-medium text-black dark:text-dlight">
           {capitalizeWords(item.weather[0].description)}
         </span>
       </div>

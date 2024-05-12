@@ -32,7 +32,7 @@ export default function CurrentWeather() {
 
     return (
         <Paper>
-            <span className="font-light text-black">
+            <span className="font-light text-black dark:text-dlight">
                 {dayjs().format('MMMM DD, YYYY  hh:mm A')}
             </span>
             <div className="flex flex-wrap items-center justify-around">
@@ -43,32 +43,32 @@ export default function CurrentWeather() {
                 className="shrink-0"
                 />
                 <div className="flex shrink-0 flex-col items-center">
-                <span className="text-5xl text-black">{data.main.temp.toFixed()}&#176;C</span>
-                <span className="text-black">
+                <span className="text-5xl text-black dark:text-dlight">{data.main.temp.toFixed()}&#176;C</span>
+                <span className="text-black dark:text-dlight">
                     {capitalizeWords(data.weather[0].description)}
                 </span>
                 </div>
             </div>
             <div className="flex flex-wrap justify-between">
                 <div className="flex flex-col items-center">
-                    <span>Humidity</span>
-                    <span className="font-medium text-black">{data.main.humidity}%</span>
+                    <span className='dark:text-dlight'>Humidity</span>
+                    <span className="font-medium text-black dark:text-dlight">{data.main.humidity}%</span>
                 </div>
                 <div className="flex flex-col items-center ">
-                    <span>Winds</span>
+                    <span className='dark:text-dlight'>Winds</span>
                     <div className="flex items-center">
                         <IconArrowRight
-                        className={'fill-black'}
+                        className={'fill-black dark:fill-dgray'}
                         transform={`rotate(${data.wind.deg})`}
                         />
-                        <span className="font-medium text-black">
+                        <span className="font-medium text-black dark:text-dlight">
                         {data.wind.speed} m/s
                         </span>
                     </div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span>Visibility</span>
-                    <span className="font-medium text-black">
+                    <span className='dark:text-dlight'>Visibility</span>
+                    <span className="font-medium text-black dark:text-dlight">
                         {Math.trunc(data.visibility / 1000)} km
                     </span>
                 </div>

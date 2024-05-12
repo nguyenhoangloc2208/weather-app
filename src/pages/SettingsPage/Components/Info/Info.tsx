@@ -17,18 +17,18 @@ export default function Info() {
     return(
         <Paper className="mt-5 px-0">
             <div className="px-4 mb-2">
-                <span className="font-thin text-black">About BeruWeather</span>
+                <span className="font-thin text-black dark:text-dlight">About BeruWeather</span>
             </div>
             <div>
                 <button 
-                className="p-4 hover:bg-gray-100 w-full bg-white border-none flex justify-between items-center"
+                className="p-4 hover:bg-gray-100 dark:hover:bg-dhoverblack w-full bg-white border-none flex justify-between items-center dark:bg-dblack dark:text-dlight"
                 onClick={onBeruClick}
                 >
                     <span>About Beru</span>
                     <IconChevronRight />
                 </button>
                 <button 
-                className="p-4 hover:bg-gray-100 w-full bg-white border-none flex justify-between items-center"
+                className="p-4 hover:bg-gray-100 dark:hover:bg-dhoverblack w-full bg-white border-none flex justify-between items-center dark:bg-dblack dark:text-dlight"
                 onClick={onPrivacyPolicyClick}
                 >
                     <span>Privacy policy</span>

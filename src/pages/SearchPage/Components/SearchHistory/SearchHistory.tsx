@@ -32,30 +32,30 @@ export default function SearchHistory() {
     return(
         <div className="flex w-full flex-col mt-5">
             {history.length > 0 &&
-                <span className="font-medium text-black"> Search History</span>
+                <span className="font-medium text-black dark:text-dlight"> Search History</span>
             }
             <Paper className="mt-3 max-h-[450px] overflow-auto p-0">
                 {/* {history.length === 0 && (
-                    <span className="p-2 text-black">No history</span>
+                    <span className="p-2 text-black dark:text-dlight">No history</span>
                 )} */}
                 {history.length > 0 && history.map((item, index) => {
                     return (
                         <div 
                             key={index} 
                             role="listitem"
-                            className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100"
+                            className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100 dark:hover:bg-dhoverblack"
                             onClick= {() => onSelectGeo(item)}
                             >
-                            <span>{item.name}</span>
+                            <span className="dark:text-dlight">{item.name}</span>
                             <div className="flex gap-3">
                                 <IconSearch
-                                    className="fill-black"
+                                    className="fill-black dark:fill-dgray"
                                     width={20}
                                     height={20}
                                     onClick={() => onSelectGeo(item)}
                                 />
                                 <IconTrash
-                                    className="fill-black"
+                                    className="fill-black dark:fill-dgray"
                                     width={20}
                                     height={20}
                                     onClick={() => onDeleteGeo(item)}

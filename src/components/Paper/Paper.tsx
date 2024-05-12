@@ -11,7 +11,7 @@ export default function Paper({ children, className, level = 'md' }: Prop) {
   return (
     <div
     className={twMerge(
-      `w-full rounded-lg bg-white p-4 shadow-${level}`,
+      `w-full rounded-lg bg-white dark:bg-dblack p-4 shadow-${level}`,
       className,
     )}
     >

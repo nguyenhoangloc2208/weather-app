@@ -16,11 +16,11 @@ export default function UnitSetting() {
 
     return(
         <Paper>
-            <span className="font-thin text-black">Unit</span>
+            <span className="font-thin text-black dark:text-dlight">Unit</span>
             <div className="flex justify-between items-center">
-                <span className="font-normal text-black">Temperature Unit</span>
+                <span className="font-normal text-black dark:text-dlight">Temperature Unit</span>
                 <select 
-                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap"
+                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap dark:bg-dblack dark:text-dlight"
                 value={units.temperature}
                 onChange={(e) => setUnits({ ...units, temperature: e.target.value })}
                 >
@@ -29,9 +29,9 @@ export default function UnitSetting() {
                 </select>
             </div>
             <div className="flex justify-between items-center">
-                <span className="font-normal text-black">Wind speed Unit</span>
+                <span className="font-normal text-black dark:text-dlight">Wind speed Unit</span>
                 <select 
-                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap"
+                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap dark:bg-dblack dark:text-dlight"
                 value={units.windSpeed}
                 onChange={(e) => setUnits({ ...units, windSpeed: e.target.value })}
                 >
@@ -42,9 +42,9 @@ export default function UnitSetting() {
                 </select>
             </div>
             <div className="flex justify-between items-center">
-                <span className="font-normal text-black">Atmospheric pressure Unit</span>
+                <span className="font-normal text-black dark:text-dlight">Atmospheric pressure Unit</span>
                 <select 
-                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap"
+                className="select w-1/3 rounded-sm p-2 border-none focus:outline-none min-h-16 text-wrap dark:bg-dblack dark:text-dlight"
                 value={units.atmosphericPressure}
                 onChange={(e) => setUnits({ ...units, atmosphericPressure: e.target.value })}
                 >

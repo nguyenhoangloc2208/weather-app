@@ -9,7 +9,7 @@ type Prop = {
 export default function Forecast({day, items}: Prop){
     return(
         <div className="p-3">
-            <span className="sticky top-0 inline-block w-full bg-white py-5 font-thin">
+            <span className="sticky top-0 inline-block w-full bg-white dark:text-dlight dark:bg-dblack py-5 font-thin">
                 {day}
             </span>
             {items.map((item) => (
