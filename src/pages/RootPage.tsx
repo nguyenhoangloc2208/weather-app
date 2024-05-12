@@ -40,7 +40,7 @@ export default function RootPage() {
                 <label className=' input input-bordered mx-auto flex justify-between w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 min-w-[300px] items-center gap-2 border-none bg-white dark:bg-dblack px-3'>
                     {location.pathname === '/' ? 
                         <IconLocation
-                            className='fill-black dark:fill-dgray'
+                            className='cursor-auto fill-black dark:fill-dgray'
                         />
                         :
                         <IconHome

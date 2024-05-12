@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import dayjs from "dayjs";
 import { getData } from "../services/fetcher";
+import { formatTimestamp } from "../utils/date";
 
 interface ForeCastResponse {
     cod: string;
@@ -72,7 +72,7 @@ export default function useForeCast(lat: number, lon: number){
     const result: Record<string, IForecastItem[]> = {};
     if (!isLoading && data) {
         data.list.forEach((item) => {
-          const date = dayjs(item.dt * 1000).format('DD MMMM');
+          const date = formatTimestamp(item.dt * 1000, true);
           if (!result[date]) {
             result[date] = [];
           }

@@ -17,7 +17,7 @@ describe('SearchInput', () => {
       </Router>
     );
     const inputElement = screen.getByPlaceholderText(
-      'Search country, or city here...',
+      'search_input',
     );
     expect(inputElement).toBeInTheDocument();
   });
@@ -28,7 +28,7 @@ describe('SearchInput', () => {
       </Router>
     );
     const inputElement = screen.getByPlaceholderText(
-      'Search country, or city here...',
+      'search_input',
     );
     userEvent.type(inputElement, 'London');
     await waitFor(() => {
@@ -42,7 +42,7 @@ describe('SearchInput', () => {
       </Router>
     );
     const inputElement = screen.getByPlaceholderText(
-      'Search country, or city here...',
+      'search_input',
     );
     await userEvent.type(inputElement, 'InvalidCity');
     await waitFor(() => {

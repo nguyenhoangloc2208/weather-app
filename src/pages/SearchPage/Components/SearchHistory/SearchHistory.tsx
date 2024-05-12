@@ -7,12 +7,15 @@ import { useCallback } from "react";
 import { GeoCodingResponse } from "../../../../hooks/useGeoCoding";
 import { selectedGeoAtom } from "../../../../atoms/selectedGeoAtom";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 export default function SearchHistory() {
     const [history, setHistory] = useAtom(geoHistoryAtom);
     const setSelectedGeo = useSetAtom(selectedGeoAtom);
     const navigate = useNavigate();
+    const { t } = useTranslation();
+    
 
     const onSelectGeo = useCallback(
         (item: GeoCodingResponse) => {
@@ -32,7 +35,7 @@ export default function SearchHistory() {
     return(
         <div className="flex w-full flex-col mt-5">
             {history.length > 0 &&
-                <span className="font-medium text-black dark:text-dlight"> Search History</span>
+                <span className="font-medium text-black dark:text-dlight">{t("search_hisoty")}</span>
             }
             <Paper className="mt-3 max-h-[450px] overflow-auto p-0">
                 {/* {history.length === 0 && (

@@ -3,6 +3,7 @@ import Paper from '../../../../components/Paper/Paper';
 import useForeCast from '../../../../hooks/useForeCast';
 import Forecast from './Forecast';
 import { selectedGeoAtom } from '../../../../atoms/selectedGeoAtom';
+import { useTranslation } from 'react-i18next';
 
 export default function ForecastList() {
   const selectedGeo = useAtomValue(selectedGeoAtom);
@@ -10,13 +11,15 @@ export default function ForecastList() {
     selectedGeo.lat,
     selectedGeo.lon,
   );
+  const { t } = useTranslation();
+
 
   const days = Object.keys(data);
   const forecasts = Object.values(data);
 
   return (
     <div className="mt-5 flex w-full flex-col">
-      <span className='font-medium text-black dark:text-dlight'>5-day Forecast (3 Hours)</span>
+      <span className='font-medium text-black dark:text-dlight'>{t("5_day")}</span>
       <Paper className="mt-3 h-[450px] overflow-auto p-0">
         {isLoading && (
           <span className='loading loading-spinner loading-lg mx-auto block'></span>

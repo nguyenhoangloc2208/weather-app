@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import Paper from '../../../../components/Paper/Paper';
 import { IconArrowRight } from '../../../../components/icons/ArrowRight';
 import OpenWeatherIcon from '../../../../components/OpenWeatherIcon';
@@ -6,6 +5,8 @@ import useCurrentWeather from '../../../../hooks/useCurrentWeather';
 import { capitalizeWords } from '../../../../utils/string';
 import { useAtomValue } from 'jotai';
 import { selectedGeoAtom } from '../../../../atoms/selectedGeoAtom';
+import { formatTimestamp } from '../../../../utils/date';
+import { useTranslation } from 'react-i18next';
 
 export default function CurrentWeather() {
     const selectedGeo = useAtomValue(selectedGeoAtom);
@@ -13,6 +14,7 @@ export default function CurrentWeather() {
         selectedGeo.lat,
         selectedGeo.lon,
     );
+    const { t } = useTranslation();
 
     if (isLoading) {
         return (
@@ -25,15 +27,18 @@ export default function CurrentWeather() {
     if (error) {
         return (
         <Paper>
-            <span className="text-red-500">Failed to fetch data</span>
+            <span className="text-red-500">{t("failed")}</span>
         </Paper>
         );
     }
 
+    const currentTimestamp = Date.now();
+    const formattedTimestamp = formatTimestamp(currentTimestamp, false);
+
     return (
         <Paper>
             <span className="font-light text-black dark:text-dlight">
-                {dayjs().format('MMMM DD, YYYY  hh:mm A')}
+                {formattedTimestamp}
             </span>
             <div className="flex flex-wrap items-center justify-around">
                 <OpenWeatherIcon
@@ -45,17 +50,17 @@ export default function CurrentWeather() {
                 <div className="flex shrink-0 flex-col items-center">
                 <span className="text-5xl text-black dark:text-dlight">{data.main.temp.toFixed()}&#176;C</span>
                 <span className="text-black dark:text-dlight">
-                    {capitalizeWords(data.weather[0].description)}
+                    {capitalizeWords(t(data.weather[0].description))}
                 </span>
                 </div>
             </div>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col items-center">
-                    <span className='dark:text-dlight'>Humidity</span>
+                <div className="flex flex-col justify-around items-center">
+                    <span className='dark:text-dlight'>{t("humidity")}</span>
                     <span className="font-medium text-black dark:text-dlight">{data.main.humidity}%</span>
                 </div>
-                <div className="flex flex-col items-center ">
-                    <span className='dark:text-dlight'>Winds</span>
+                <div className="flex flex-col justify-around items-center ">
+                    <span className='dark:text-dlight'>{t("winds")}</span>
                     <div className="flex items-center">
                         <IconArrowRight
                         className={'fill-black dark:fill-dgray'}
@@ -66,8 +71,8 @@ export default function CurrentWeather() {
                         </span>
                     </div>
                 </div>
-                <div className="flex flex-col items-center">
-                    <span className='dark:text-dlight'>Visibility</span>
+                <div className="flex flex-col justify-around items-center">
+                    <span className='dark:text-dlight'>{t("visibility")}</span>
                     <span className="font-medium text-black dark:text-dlight">
                         {Math.trunc(data.visibility / 1000)} km
                     </span>

@@ -6,6 +6,7 @@ import { useSetAtom } from 'jotai';
 import { selectedGeoAtom } from '../../../../atoms/selectedGeoAtom';
 import { useNavigate } from 'react-router-dom';
 import { geoHistoryAtom } from '../../../../atoms/geoHistoryAtom';
+import { useTranslation } from 'react-i18next';
 
 export default function SearchInput() {
     const [error, setError] = useState<string | null>(null);
@@ -16,6 +17,7 @@ export default function SearchInput() {
     const setGeoHistory = useSetAtom(geoHistoryAtom);
     const navigate = useNavigate();
     const comboBoxButton = useRef<HTMLButtonElement>(null);
+    const { t } = useTranslation();
 
     const search = useCallback(
       async (value: string) => {
@@ -74,7 +76,7 @@ export default function SearchInput() {
             >
                 <Combobox.Input
                 className="input h-auto w-full bg-white dark:bg-dblack dark:text-dlight p-2"
-                placeholder="Search country, or city here..."
+                placeholder={t("search_input")}
                 autoComplete='off'
                 onChange={debounce((event) => onInputChange(event.target.value), 500)}
                 onFocus={onInputFocus}
