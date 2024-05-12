@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import RootPage from '../pages/RootPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import SettingsPage from '../pages/SettingsPage/SettingsPage';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <SearchPage />,
+      },
+      {
+        path: '/settings',
+        element: <SettingsPage />
       }
     ],
   },

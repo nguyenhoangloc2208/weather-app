@@ -43,7 +43,9 @@ export default function SearchHistory() {
                         <div 
                             key={index} 
                             role="listitem"
-                            className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100">
+                            className="transition duration-300 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-100"
+                            onClick= {() => onSelectGeo(item)}
+                            >
                             <span>{item.name}</span>
                             <div className="flex gap-3">
                                 <IconSearch
