@@ -1,5 +1,6 @@
 {
     "failed": "データの取得に失敗しました",
+    "atmospheric_pressure": "大気圧:",
     "setting": "設定",
     "visibility": "視界",
     "winds": "風",
@@ -29,7 +30,22 @@
     "atm": "標準大気圧 (atm)",
     "orthers_setting": "その他の設定",
     "dark_mode": "ダークモード",
+    "language": "言語",
     "about": "BeruWeatherについて",
     "beru": "Beruについて",
-    "privacy_policy": "プライバシーポリシー"
+    "privacy_policy": "プライバシーポリシー",
+    "privacy_policy_page": {
+        "welcome_message": "プライバシーポリシー",
+        "introduction": "WeatherAppへようこそ。OpenWeather APIに基づく天気情報を提供するWebアプリケーションです。私たちは個人情報保護を非常に重要視し、お客様のプライバシーを保護することに専念しています。このプライバシーポリシーでは、アプリケーションを使用する際にお客様の個人情報を収集し、使用し、保護する方法について説明します。",
+        "personal_information_collection": "個人情報の収集",
+        "personal_information_collection_details": "WeatherAppを使用すると、IPアドレス、地理的位置（提供されている場合）、およびアプリケーションの使用に関連するその他の情報を含む、お客様から一部の個人情報を収集することがあります。",
+        "personal_information_usage": "個人情報の利用",
+        "personal_information_usage_details": "収集された個人情報は、サービスの提供、ユーザーエクスペリエンスの向上、およびアプリケーションのコンテンツのカスタマイズに使用されます。お客様の個人情報は、天気情報や当社のアプリに関連する更新情報を送信するために使用される場合があります。",
+        "personal_information_protection": "個人情報の保護",
+        "personal_information_protection_details": "私たちはお客様の個人情報を保護することに専念し、法律によって要求される場合やサービス提供のために必要な場合を除き、個人情報を第三者と共有しません。",
+        "contact": "お問い合わせ",
+        "contact_details": "当社のプライバシーポリシーに関するご質問やフィードバックがある場合は、メールでお問い合わせください：nguyenhoangloc2208@gmail.com。",
+        "policy_changes": "ポリシー変更",
+        "policy_changes_details": "当社はこのプライバシーポリシーを定期的に更新することがあります。変更は当社のウェブサイトで公表されます。"
+    }    
 }

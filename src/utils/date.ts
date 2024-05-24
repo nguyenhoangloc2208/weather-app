@@ -6,7 +6,7 @@ export function formatTimestamp(timestamp: number, noyear: boolean): string {
 
     switch (lang) {
         case 'en':
-            format = noyear ? 'MMMM DD' : 'MMMM DD, YYYY hh:mm A';
+            format = noyear ? 'DD MMMM' : 'MMMM DD, YYYY hh:mm A';
             break;
         case 'fr':
             format = noyear ? 'DD MMMM' : 'DD MMMM YYYY HH:mm';

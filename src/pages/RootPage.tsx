@@ -1,20 +1,20 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { IconLocation } from '../components/icons/IconLocation';
 import IconSearch from '../components/icons/IconSearch';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAtomValue } from 'jotai';
 import { selectedGeoAtom } from '../atoms/selectedGeoAtom';
 import { IconHome } from '../components/icons/IconHome';
 import { IconCog } from '../components/icons/IconCog';
 import { IconSun } from '../components/icons/IconSun';
-import useDarkSide from '../hooks/useDarkSide';
 import { IconMoon } from '../components/icons/IconMoon';
+import { useDarkSide } from '../hooks/useDarkSide';
 
 export default function RootPage() {
     const navigate = useNavigate();
     const selectGeo = useAtomValue(selectedGeoAtom);
     const location = useLocation();
-    const [theme, setTheme, loading] = useDarkSide();
+    const [theme, mutateTheme, loading] = useDarkSide();
 
     const onInputClick = useCallback(() => {
         navigate('/search');
@@ -27,10 +27,6 @@ export default function RootPage() {
     const onSettingClick = useCallback(() => {
         navigate('/settings');
     }, [navigate])
-
-    useEffect(()=> {
-        console.log(theme);
-    }, [theme]);
 
     if(loading) return <div className='loading loading-spinner loading-sm mt-3 mx-auto block'></div>
 
@@ -65,12 +61,12 @@ export default function RootPage() {
                         {theme === 'dark' ? 
                             <IconSun 
                             className='cursor-pointer fill-black mx-2 dark:fill-dgray'
-                            onClick={() => setTheme('dark')}
+                            onClick={() => mutateTheme('dark')}
                             />
                             :
                             <IconMoon
                             className='cursor-pointer fill-black mx-2 dark:fill-dgray'
-                            onClick={() => setTheme('light')}
+                            onClick={() => mutateTheme('light')}
                             />
                         }
                         <IconCog

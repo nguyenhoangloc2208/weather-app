@@ -1,5 +1,6 @@
 {
     "failed": "Échec de récupération des données",
+    "atmospheric_pressure": "Pression Atmosphérique:",
     "setting": "Réglage",
     "visibility": "Visibilité",
     "winds": "Vents",
@@ -29,7 +30,22 @@
     "atm": "Atmosphère standard (atm)",
     "orthers_setting": "Autres paramètres",
     "dark_mode": "Mode sombre",
+    "language": "Langue",
     "about": "À propos de BeruWeather",
     "beru": "À propos de Beru",
-    "privacy_policy": "Politique de confidentialité"
+    "privacy_policy": "Politique de confidentialité",
+    "privacy_policy_page": {
+        "welcome_message": "Politique de confidentialité",
+        "introduction": "Bienvenue sur WeatherApp, une application Web fournissant des informations météorologiques basées sur l'API OpenWeather. Nous attachons une grande importance à la protection de vos informations personnelles et nous nous engageons à protéger votre vie privée. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre application.",
+        "personal_information_collection": "Collecte d'informations personnelles",
+        "personal_information_collection_details": "Lorsque vous utilisez WeatherApp, nous pouvons collecter certaines informations personnelles vous concernant, notamment votre adresse IP, votre position géographique (si elle est fournie) et d'autres informations liées à l'utilisation de l'application.",
+        "personal_information_usage": "Utilisation des informations personnelles",
+        "personal_information_usage_details": "Nous utilisons les informations personnelles collectées pour fournir des services, améliorer l'expérience utilisateur et personnaliser le contenu de l'application. Vos informations personnelles peuvent être utilisées pour envoyer des informations météorologiques et des mises à jour liées à notre application.",
+        "personal_information_protection": "Protection des informations personnelles",
+        "personal_information_protection_details": "Nous nous engageons à protéger vos informations personnelles et ne partageons pas d'informations personnelles avec des tiers sauf si requis par la loi ou nécessaire pour fournir nos services.",
+        "contact": "Contact",
+        "contact_details": "Si vous avez des questions ou des commentaires concernant notre politique de confidentialité, veuillez nous contacter par e-mail : nguyenhoangloc2208@gmail.com.",
+        "policy_changes": "Changements de politique",
+        "policy_changes_details": "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Tous les changements seront annoncés sur notre site Web."
+    }    
 }

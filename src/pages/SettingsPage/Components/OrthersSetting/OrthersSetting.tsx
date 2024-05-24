@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from "react";
 import Paper from "../../../../components/Paper/Paper";
-import useDarkSide from "../../../../hooks/useDarkSide";
 import { useTranslation } from "react-i18next";
+import { useDarkSide } from "../../../../hooks/useDarkSide";
 
 export default function OrthersSetting() {
-    const [colorTheme, setTheme, loading] = useDarkSide();
+    const [colorTheme, mutateTheme, loading] = useDarkSide();
     const [darkSide, setDarkSide] = useState<boolean>(colorTheme === 'light' ? true : false);
     const { i18n } = useTranslation();
     const { t } = useTranslation();
@@ -12,7 +12,7 @@ export default function OrthersSetting() {
     const toggleDarkMode = (event: ChangeEvent<HTMLInputElement>) => {
         const checked = event.target.checked;
         const newTheme = checked ? 'dark' : 'light';
-        setTheme(newTheme);
+        mutateTheme(newTheme);
         setDarkSide(checked);
     };
 
@@ -40,9 +40,11 @@ export default function OrthersSetting() {
                     />
                 </div>
             </div>
-            <div>
+            <div className="flex justify-between items-center px-4">
+                <span className="font-normal text-black dark:text-dlight">{t("language")}</span>
                 <select 
                     value={i18n.language} 
+                    className="select text-black bg-white w-1/3 rounded-sm px-2 border-none focus:outline-none text-wrap dark:bg-dblack dark:text-dlight"
                     onChange={handleLanguageChange}
                     >
                     <option value="en">English</option>

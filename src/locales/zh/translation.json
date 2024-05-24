@@ -1,5 +1,6 @@
 {
     "failed": "无法获取数据",
+    "atmospheric_pressure": "大气压:",
     "setting": "设置",
     "visibility": "能见度",
     "winds": "风",
@@ -29,7 +30,22 @@
     "atm": "标准大气压 (atm)",
     "orthers_setting": "其他设置",
     "dark_mode": "夜间模式",
+    "language": "语言",
     "about": "关于 BeruWeather",
     "beru": "关于 Beru",
-    "privacy_policy": "隐私政策"
+    "privacy_policy": "隐私政策",
+    "privacy_policy_page": {
+        "welcome_message": "隐私政策",
+        "introduction": "欢迎使用 WeatherApp，这是一个基于 OpenWeather API 提供天气信息的 Web 应用程序。我们非常重视保护您的个人信息，并致力于保护您的隐私。本隐私政策描述了当您使用我们的应用程序时，我们如何收集、使用和保护您的个人信息。",
+        "personal_information_collection": "个人信息收集",
+        "personal_information_collection_details": "当您使用 WeatherApp 时，我们可能会收集您的一些个人信息，包括您的 IP 地址、地理位置（如果提供）以及与应用程序使用相关的其他信息。",
+        "personal_information_usage": "个人信息使用",
+        "personal_information_usage_details": "我们使用收集到的个人信息来提供服务，改善用户体验并自定义应用程序内容。您的个人信息可能会用于发送与我们应用程序相关的天气信息和更新。",
+        "personal_information_protection": "个人信息保护",
+        "personal_information_protection_details": "我们承诺保护您的个人信息，并除非法律要求或提供我们的服务所必需，否则不与第三方分享个人信息。",
+        "contact": "联系方式",
+        "contact_details": "如果您对我们的隐私政策有任何疑问或反馈，请通过电子邮件与我们联系：nguyenhoangloc2208@gmail.com。",
+        "policy_changes": "政策变更",
+        "policy_changes_details": "我们可能会不时更新本隐私政策。所有更改将在我们的网站上公布。"
+    }    
 }

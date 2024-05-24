@@ -1,5 +1,6 @@
 {
     "failed": "Failed to fetch data",
+    "atmospheric_pressure": "Atmospheric Pressure:",
     "setting": "Setting",
     "visibility": "Visibility",
     "winds": "Winds",
@@ -22,14 +23,29 @@
     "mpn": "Miles per hour (mph)",
     "kt": "Knots (kt)",
     "atmospheric_pressure_unit": "Atmospheric pressure Unit",
-    "hpa": "Hectopascal (hpa)",
+    "hpa": "Hectopascal (hPa)",
     "mbar": "Miliibar (mbar)",
     "mmhg": "Millimeters of Mercury (mmHg)",
     "inhg": "Inches of Mercury (inHg)",
     "atm": "Standard Atmosphere (atm)",
     "orthers_setting": "Orthers Setting",
     "dark_mode": "Dark mode",
+    "language": "Language",
     "about": "About BeruWeather",
     "beru": "About Beru",
-    "privacy_policy": "Privacy Policy"
+    "privacy_policy": "Privacy Policy",
+    "privacy_policy_page": {
+        "welcome_message": "Privacy Policy",
+        "introduction": "Welcome to WeatherApp, a web application providing weather information based on OpenWeather API. We highly value the protection of your personal information and are committed to safeguarding your privacy. This privacy policy describes how we collect, use, and protect your personal information when you use our application.",
+        "personal_information_collection": "Collection of Personal Information",
+        "personal_information_collection_details": "When you use WeatherApp, we may collect some personal information from you, including your IP address, geographic location (if provided), and other information related to app usage.",
+        "personal_information_usage": "Use of Personal Information",
+        "personal_information_usage_details": "We use the collected personal information to provide services, improve user experience, and customize app content. Your personal information may be used to send weather information and updates related to our app.",
+        "personal_information_protection": "Protection of Personal Information",
+        "personal_information_protection_details": "We are committed to protecting your personal information and do not share personal information with third parties except where required by law or necessary to provide our services.",
+        "contact": "Contact",
+        "contact_details": "If you have any questions or feedback about our privacy policy, please contact us via email: nguyenhoangloc2208@gmail.com.",
+        "policy_changes": "Policy Changes",
+        "policy_changes_details": "We may update this privacy policy from time to time. Any changes will be announced on our website."
+    }
 }

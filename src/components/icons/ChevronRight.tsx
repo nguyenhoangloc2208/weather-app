@@ -5,6 +5,7 @@ export function IconChevronRight(props: React.SVGProps<SVGSVGElement>) {
         stroke="currentColor" 
         height="1em"
         width="1em"
+        fill="none"
         {...props}
         >
             <path 

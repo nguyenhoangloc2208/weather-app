@@ -1,5 +1,6 @@
 {
     "failed": "Lỗi khi lấy dữ liệu",
+    "atmospheric_pressure": "Áp suất không khí:",
     "setting": "Cài đặt",
     "visibility": "Tầm nhìn",
     "winds": "Gió",
@@ -29,7 +30,22 @@
     "atm": "Khí quyển tiêu chuẩn (atm)",
     "orthers_setting": "Cài đặt khác",
     "dark_mode": "Chế độ tối",
+    "language": "Ngôn ngữ",
     "about": "Về BeruWeather",
     "beru": "Về Beru",
-    "privacy_policy": "Chính sách Riêng tư"
+    "privacy_policy": "Chính sách Riêng tư",
+    "privacy_policy_page": {
+        "welcome_message": "Chính sách bảo mật",
+        "introduction": "Chào mừng bạn đến với WeatherApp, một ứng dụng web cung cấp thông tin thời tiết dựa trên API của OpenWeather. Chúng tôi rất quan trọng việc bảo vệ thông tin cá nhân của bạn và cam kết bảo vệ sự riêng tư của bạn. Chính sách bảo mật này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn khi bạn sử dụng ứng dụng của chúng tôi.",
+        "personal_information_collection": "Thu thập thông tin cá nhân",
+        "personal_information_collection_details": "Khi bạn sử dụng WeatherApp, chúng tôi có thể thu thập một số thông tin cá nhân từ bạn, bao gồm địa chỉ IP, vị trí địa lý (nếu được cung cấp), và các thông tin khác liên quan đến việc sử dụng ứng dụng.",
+        "personal_information_usage": "Sử dụng thông tin cá nhân",
+        "personal_information_usage_details": "Chúng tôi sử dụng thông tin cá nhân thu thập được để cung cấp dịch vụ, cải thiện trải nghiệm người dùng và tùy chỉnh nội dung của ứng dụng. Thông tin cá nhân của bạn có thể được sử dụng để gửi thông tin thời tiết và cập nhật liên quan đến ứng dụng của chúng tôi.",
+        "personal_information_protection": "Bảo vệ thông tin cá nhân",
+        "personal_information_protection_details": "Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và không chia sẻ thông tin cá nhân với bên thứ ba ngoại trừ trường hợp có yêu cầu pháp lý hoặc khi cần thiết để cung cấp dịch vụ của chúng tôi.",
+        "contact": "Liên hệ",
+        "contact_details": "Nếu bạn có bất kỳ câu hỏi hoặc phản hồi nào về chính sách bảo mật của chúng tôi, vui lòng liên hệ với chúng tôi qua email: nguyenhoangloc2208@gmail.com.",
+        "policy_changes": "Thay đổi chính sách",
+        "policy_changes_details": "Chúng tôi có thể cập nhật chính sách bảo mật này từ thời gian này sang thời gian khác. Bất kỳ thay đổi nào sẽ được công bố trên trang web của chúng tôi."
+    }
 }

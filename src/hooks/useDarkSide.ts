@@ -1,31 +1,21 @@
 import { useEffect, useState } from 'react';
 
-export default function useDarkSide(): [string, (theme: string) => void, boolean] {
-  const [theme, setTheme] = useState<string>(() => localStorage.theme || 'light');
+export function useDarkSide(): [string, (theme: string) => void, boolean] {
+  const [theme, setTheme] = useState<string>(() => localStorage.getItem('theme') || 'light');
   const [loading, setLoading] = useState<boolean>(true);
-  const [initialized, setInitialized] = useState<boolean>(false);
   const colorTheme: string = theme === 'dark' ? 'light' : 'dark';
 
   useEffect(() => {
     const root: HTMLElement = window.document.documentElement;
     root.classList.remove(colorTheme);
     root.classList.add(theme);
-
-    // save theme to local storage
-    localStorage.setItem('theme', theme);
-
-    // Khi hiệu ứng phụ này kết thúc, đánh dấu đã khởi tạo hook.
-    setInitialized(true);
+    setLoading(false);
   }, [theme, colorTheme]);
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && savedTheme !== theme) {
-      setTheme(savedTheme);
-    } else {
-      setLoading(false);
-    }
-  }, []);
+  const mutateTheme = (newTheme: string) => {
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
 
-  return [colorTheme, setTheme, loading && !initialized];
+  return [colorTheme, mutateTheme, loading];
 }

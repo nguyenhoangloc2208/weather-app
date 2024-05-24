@@ -3,10 +3,12 @@ import { IconArrowRight } from '../../../../components/icons/ArrowRight';
 import OpenWeatherIcon from '../../../../components/OpenWeatherIcon';
 import useCurrentWeather from '../../../../hooks/useCurrentWeather';
 import { capitalizeWords } from '../../../../utils/string';
-import { useAtomValue } from 'jotai';
+import { useAtom, useAtomValue } from 'jotai';
 import { selectedGeoAtom } from '../../../../atoms/selectedGeoAtom';
 import { formatTimestamp } from '../../../../utils/date';
 import { useTranslation } from 'react-i18next';
+import { atmosphericPressureConverter, temperatureConverter, windSpeedConverter } from '../../../../utils/unit';
+import { unitSettingAtom } from '../../../../atoms/unitSettingAtom';
 
 export default function CurrentWeather() {
     const selectedGeo = useAtomValue(selectedGeoAtom);
@@ -15,6 +17,7 @@ export default function CurrentWeather() {
         selectedGeo.lon,
     );
     const { t } = useTranslation();
+    const [units, ] = useAtom(unitSettingAtom);
 
     if (isLoading) {
         return (
@@ -32,13 +35,20 @@ export default function CurrentWeather() {
         );
     }
 
+    console.log(units);
+    
+
     const currentTimestamp = Date.now();
     const formattedTimestamp = formatTimestamp(currentTimestamp, false);
 
     return (
         <Paper>
-            <span className="font-light text-black dark:text-dlight">
+            <span className="flex justify-between font-light text-black dark:text-dlight">
                 {formattedTimestamp}
+                <div>
+                    <span>{t("atmospheric_pressure")}</span>
+                    <span>&nbsp;{atmosphericPressureConverter(data.main.pressure, units.atmosphericPressure)} {units.atmosphericPressure}</span>
+                </div>
             </span>
             <div className="flex flex-wrap items-center justify-around">
                 <OpenWeatherIcon
@@ -48,7 +58,7 @@ export default function CurrentWeather() {
                 className="shrink-0"
                 />
                 <div className="flex shrink-0 flex-col items-center">
-                <span className="text-5xl text-black dark:text-dlight">{data.main.temp.toFixed()}&#176;C</span>
+                <span className="text-5xl text-black dark:text-dlight">{temperatureConverter(data.main.temp, units.temperature).toFixed(2)}&#176;{units.temperature}</span>
                 <span className="text-black dark:text-dlight">
                     {capitalizeWords(t(data.weather[0].description))}
                 </span>
@@ -67,7 +77,7 @@ export default function CurrentWeather() {
                         transform={`rotate(${data.wind.deg})`}
                         />
                         <span className="font-medium text-black dark:text-dlight">
-                        {data.wind.speed} m/s
+                        {windSpeedConverter(data.wind.speed, units.windSpeed).toFixed(2)} {units.windSpeed}
                         </span>
                     </div>
                 </div>

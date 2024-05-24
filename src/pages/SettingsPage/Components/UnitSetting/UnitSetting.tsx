@@ -1,19 +1,11 @@
-import { useState } from "react";
 import Paper from "../../../../components/Paper/Paper";
 import { useTranslation } from "react-i18next";
+import { useAtom } from "jotai";
+import { unitSettingAtom } from "../../../../atoms/unitSettingAtom";
 
-interface Units {
-    temperature: string;
-    windSpeed: string;
-    atmosphericPressure: string;
-}
 
 export default function UnitSetting() {
-    const [units, setUnits] = useState<Units>({
-        temperature: "C",
-        windSpeed: "kmh",
-        atmosphericPressure: "hpa"
-    });
+    const [units, setUnits] = useAtom(unitSettingAtom);
     const { t } = useTranslation();
 
     return(
@@ -26,8 +18,8 @@ export default function UnitSetting() {
                 value={units.temperature}
                 onChange={(e) => setUnits({ ...units, temperature: e.target.value })}
                 >
-                    <option value="C">&#8451;</option>
-                    <option value="F">&#8457;</option>
+                    <option value="C">&#176;C</option>
+                    <option value="F">&#176;F</option>
                 </select>
             </div>
             <div className="flex justify-between items-center">
@@ -37,8 +29,8 @@ export default function UnitSetting() {
                 value={units.windSpeed}
                 onChange={(e) => setUnits({ ...units, windSpeed: e.target.value })}
                 >
-                    <option value="kmh">{t("kmh")}</option>
-                    <option value="ms">{t("ms")}</option>
+                    <option value="km/h">{t("kmh")}</option>
+                    <option value="m/s">{t("ms")}</option>
                     <option value="mph">{t("mph")}</option>
                     <option value="kt">{t("kt")}</option>
                 </select>
@@ -50,10 +42,10 @@ export default function UnitSetting() {
                 value={units.atmosphericPressure}
                 onChange={(e) => setUnits({ ...units, atmosphericPressure: e.target.value })}
                 >
-                    <option value="hpa">{t("hpa")}</option>
+                    <option value="hPa">{t("hpa")}</option>
                     <option value="mbar">{t("mbar")}</option>
-                    <option value="mmhg">{t("mmhg")}</option>
-                    <option value="inhg">{t("inhg")}</option>
+                    <option value="mmHg">{t("mmhg")}</option>
+                    <option value="inHg">{t("inhg")}</option>
                     <option value="atm">{t("atm")}</option>
                 </select>
             </div>

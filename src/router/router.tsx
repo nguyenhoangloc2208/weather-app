@@ -4,6 +4,7 @@ import RootPage from '../pages/RootPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import SettingsPage from '../pages/SettingsPage/SettingsPage';
+import PrivacyPage from '../pages/PrivacyPage/PrivacyPage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/settings',
         element: <SettingsPage />
+      },
+      {
+        path: '/privacy',
+        element: <PrivacyPage />
       }
     ],
   },
